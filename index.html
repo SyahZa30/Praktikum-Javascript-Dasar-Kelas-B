@@ -1,215 +1,221 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kalkulator Nilai Rapor Kelas — Praktikum JavaScript Dasar PSTI UPI">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Kalkulator Nilai Rapor Kelas — Praktikum JavaScript Dasar PSTI UPI"
+    />
     <title>Kalkulator Rapor — Praktikum JavaScript Dasar</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <!-- ===== HEADER: Identitas Kelas & Praktikum ===== -->
     <header class="hero-header">
-        <div class="container hero-container">
-            <div class="avatar-wrapper">
-                <!-- Inisial kelas ditampilkan di dalam lingkaran avatar -->
-                <div class="avatar-placeholder">
-                    <span>📊</span>
-                </div>
-            </div>
-            <div class="hero-info">
-                <!-- Nama sekolah ditampilkan sebagai badge di bagian atas -->
-                <div class="badge-kampus">SMA Negeri 1 Bandung</div>
-                <!-- Judul utama halaman (h1) -->
-                <h1 class="nama-profil">Kalkulator Nilai Rapor</h1>
-                <!-- Sub-judul: nama kelas dan mata pelajaran -->
-                <p class="sub-profil">Kelas XII IPA 1 — Praktikum JavaScript Dasar</p>
-                <!-- Tag-tag info tambahan -->
-                <div class="meta-tags">
-                    <span class="tag">👨‍🏫 Guru: Pak Budi</span>
-                    <span class="tag">📚 3 Mata Pelajaran</span>
-                    <span class="tag tag-active">✅ Lab Aktif</span>
-                </div>
-            </div>
+      <div class="container hero-container">
+        <div class="avatar-wrapper">
+          <!-- Inisial kelas ditampilkan di dalam lingkaran avatar -->
+          <div class="avatar-placeholder">
+            <span>📊</span>
+          </div>
         </div>
+        <div class="hero-info">
+          <!-- Nama sekolah ditampilkan sebagai badge di bagian atas -->
+          <div class="badge-kampus">SMA Negeri 1 Bandung</div>
+          <!-- Judul utama halaman (h1) -->
+          <h1 class="nama-profil">Kalkulator Nilai Rapor</h1>
+          <!-- Sub-judul: nama kelas dan mata pelajaran -->
+          <p class="sub-profil">Kelas XII IPA 1 — Praktikum JavaScript Dasar</p>
+          <!-- Tag-tag info tambahan -->
+          <div class="meta-tags">
+            <span class="tag">👨‍🏫 Guru: Pak Budi</span>
+            <span class="tag">📚 3 Mata Pelajaran</span>
+            <span class="tag tag-active">✅ Lab Aktif</span>
+          </div>
+        </div>
+      </div>
     </header>
 
     <!-- ===== KONTEN UTAMA ===== -->
     <main class="main-content container">
+      <!-- Kartu Instruksi: Cara Melihat Hasil JavaScript di Console -->
+      <section class="console-notice-card">
+        <div class="notice-icon">💡</div>
+        <div class="notice-text">
+          <h3>Cara Melihat Hasil Praktikum JavaScript</h3>
+          <p>
+            Tekan tombol <strong>F12</strong> di keyboard (atau
+            <em>Klik Kanan → Inspect → Tab Console</em>) untuk melihat semua
+            hasil <code>console.log()</code> dari
+            <strong>Aktivitas 1 s.d. 6</strong> di file <code>script.js</code>.
+          </p>
+        </div>
+      </section>
 
-        <!-- Kartu Instruksi: Cara Melihat Hasil JavaScript di Console -->
-        <section class="console-notice-card">
-            <div class="notice-icon">💡</div>
-            <div class="notice-text">
-                <h3>Cara Melihat Hasil Praktikum JavaScript</h3>
-                <p>
-                    Tekan tombol <strong>F12</strong> di keyboard 
-                    (atau <em>Klik Kanan → Inspect → Tab Console</em>) 
-                    untuk melihat semua hasil <code>console.log()</code> dari 
-                    <strong>Aktivitas 1 s.d. 6</strong> di file <code>script.js</code>.
-                </p>
+      <!-- Grid 2 kolom: Kiri = Biodata & Alur Aktivitas, Kanan = Info Nilai & Daftar Siswa -->
+      <div class="grid-layout">
+        <!-- ===== KOLOM KIRI ===== -->
+        <div class="col-left">
+          <!-- Kartu: Biodata Guru & Kelas (Aktivitas 2) -->
+          <section class="card" id="biodata-card">
+            <div class="card-header">
+              <h2>📌 Identitas Kelas (Aktivitas 2)</h2>
             </div>
-        </section>
-
-        <!-- Grid 2 kolom: Kiri = Biodata & Alur Aktivitas, Kanan = Info Nilai & Daftar Siswa -->
-        <div class="grid-layout">
-
-            <!-- ===== KOLOM KIRI ===== -->
-            <div class="col-left">
-
-                <!-- Kartu: Biodata Guru & Kelas (Aktivitas 2) -->
-                <section class="card" id="biodata-card">
-                    <div class="card-header">
-                        <h2>📌 Identitas Kelas (Aktivitas 2)</h2>
-                    </div>
-                    <div class="card-body">
-                        <ul class="biodata-list">
-                            <li>
-                                <span class="label">Nama Sekolah</span>
-                                <span class="value">SMA Negeri 1 Bandung</span>
-                            </li>
-                            <li>
-                                <span class="label">Kelas</span>
-                                <span class="value">XII IPA 1</span>
-                            </li>
-                            <li>
-                                <span class="label">Guru Pengajar</span>
-                                <span class="value">Pak Budi</span>
-                            </li>
-                            <li>
-                                <span class="label">Mata Pelajaran yang Dinilai</span>
-                                <span class="value">Matematika, B. Indonesia, IPAS</span>
-                            </li>
-                            <li>
-                                <span class="label">Nama Siswa (dari prompt)</span>
-                                <span class="value">Cek di Console — F12 → Tab Console</span>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- Kartu: Kalkulator Rata-rata Nilai (Aktivitas 3) -->
-                <section class="card" id="beban-belajar-card">
-                    <div class="card-header">
-                        <h2>🧮 Contoh Hitung Rata-rata (Aktivitas 3)</h2>
-                    </div>
-                    <div class="card-body">
-                        <!-- Tiga kotak statistik: nilai per mapel -->
-                        <div class="stat-highlight">
-                            <div class="stat-item">
-                                <span class="stat-number">80</span>
-                                <span class="stat-desc">Matematika</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">75</span>
-                                <span class="stat-desc">B. Indonesia</span>
-                            </div>
-                            <div class="stat-item highlight-item">
-                                <span class="stat-number">81.67</span>
-                                <span class="stat-desc">Rata-rata</span>
-                            </div>
-                        </div>
-                        <p class="footnote">* Nilai rata-rata = (80 + 75 + 90) ÷ 3 = 81.67</p>
-                    </div>
-                </section>
-
+            <div class="card-body">
+              <ul class="biodata-list">
+                <li>
+                  <span class="label">Nama Sekolah</span>
+                  <span class="value">SMA Negeri 1 Bandung</span>
+                </li>
+                <li>
+                  <span class="label">Kelas</span>
+                  <span class="value">XII IPA 1</span>
+                </li>
+                <li>
+                  <span class="label">Guru Pengajar</span>
+                  <span class="value">Pak Budi</span>
+                </li>
+                <li>
+                  <span class="label">Mata Pelajaran yang Dinilai</span>
+                  <span class="value">Matematika, B. Indonesia, IPAS</span>
+                </li>
+                <li>
+                  <span class="label">Nama Siswa (dari prompt)</span>
+                  <span class="value">Cek di Console — F12 → Tab Console</span>
+                </li>
+              </ul>
             </div>
+          </section>
 
-            <!-- ===== KOLOM KANAN ===== -->
-            <div class="col-right">
-
-                <!-- Kartu: Tabel Predikat Nilai (Aktivitas 4 & 5) -->
-                <section class="card" id="evaluasi-nilai-card">
-                    <div class="card-header">
-                        <h2>📊 Tabel Predikat Nilai (Aktivitas 4 & 5)</h2>
-                    </div>
-                    <div class="card-body">
-                        <!-- Tabel referensi predikat untuk memudahkan pemahaman -->
-                        <div class="grade-table-wrapper">
-                            <table class="data-table">
-                                <thead>
-                                    <tr>
-                                        <th>Rentang Nilai</th>
-                                        <th>Predikat</th>
-                                        <th>Keterangan</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>90 – 100</td>
-                                        <td>A</td>
-                                        <td>Sangat Baik</td>
-                                    </tr>
-                                    <tr>
-                                        <td>80 – 89</td>
-                                        <td>B</td>
-                                        <td>Baik</td>
-                                    </tr>
-                                    <tr>
-                                        <td>70 – 79</td>
-                                        <td>C</td>
-                                        <td>Cukup</td>
-                                    </tr>
-                                    <tr>
-                                        <td>&lt; 70</td>
-                                        <td>D</td>
-                                        <td>Perlu Perbaikan</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- Kotak hasil: contoh output dari script.js -->
-                        <div class="result-box">
-                            <div class="result-score">
-                                <span class="result-label">Rata-rata Contoh (Aktivitas 3)</span>
-                                <span class="result-val">81.67</span>
-                            </div>
-                            <div class="result-badge badge-b">
-                                Predikat: <strong>B</strong> (Baik)
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Kartu: Daftar Nama Siswa (Aktivitas 6) -->
-                <section class="card" id="matkul-card">
-                    <div class="card-header">
-                        <h2>👥 Daftar Siswa Kelas XII IPA 1 (Aktivitas 6)</h2>
-                    </div>
-                    <div class="card-body">
-                        <!-- Daftar siswa ini mencerminkan Array di script.js -->
-                        <ol class="matkul-list">
-                            <li>Andi Saputra</li>
-                            <li>Bela Ramadhani</li>
-                            <li>Cahya Permana</li>
-                            <li>Dini Anggraeni</li>
-                            <li>Eka Nugraha</li>
-                        </ol>
-                        <p class="footnote" style="margin-top: 0.75rem;">
-                            * Nama-nama di atas disimpan dalam Array <code>daftarSiswa[]</code> di <code>script.js</code> 
-                            dan dicetak menggunakan <strong>for loop</strong> di Console.
-                        </p>
-                    </div>
-                </section>
-
+          <!-- Kartu: Kalkulator Rata-rata Nilai (Aktivitas 3) -->
+          <section class="card" id="beban-belajar-card">
+            <div class="card-header">
+              <h2>🧮 Contoh Hitung Rata-rata (Aktivitas 3)</h2>
             </div>
+            <div class="card-body">
+              <!-- Tiga kotak statistik: nilai per mapel -->
+              <div class="stat-highlight">
+                <div class="stat-item">
+                  <span class="stat-number">80</span>
+                  <span class="stat-desc">Matematika</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">75</span>
+                  <span class="stat-desc">B. Indonesia</span>
+                </div>
+                <div class="stat-item highlight-item">
+                  <span class="stat-number">81.67</span>
+                  <span class="stat-desc">Rata-rata</span>
+                </div>
+              </div>
+              <p class="footnote">
+                * Nilai rata-rata = (80 + 75 + 90) ÷ 3 = 81.67
+              </p>
+            </div>
+          </section>
         </div>
 
+        <!-- ===== KOLOM KANAN ===== -->
+        <div class="col-right">
+          <!-- Kartu: Tabel Predikat Nilai (Aktivitas 4 & 5) -->
+          <section class="card" id="evaluasi-nilai-card">
+            <div class="card-header">
+              <h2>📊 Tabel Predikat Nilai (Aktivitas 4 & 5)</h2>
+            </div>
+            <div class="card-body">
+              <!-- Tabel referensi predikat untuk memudahkan pemahaman -->
+              <div class="grade-table-wrapper">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Rentang Nilai</th>
+                      <th>Predikat</th>
+                      <th>Keterangan</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>90 – 100</td>
+                      <td>A</td>
+                      <td>Sangat Baik</td>
+                    </tr>
+                    <tr>
+                      <td>80 – 89</td>
+                      <td>B</td>
+                      <td>Baik</td>
+                    </tr>
+                    <tr>
+                      <td>70 – 79</td>
+                      <td>C</td>
+                      <td>Cukup</td>
+                    </tr>
+                    <tr>
+                      <td>&lt; 70</td>
+                      <td>D</td>
+                      <td>Perlu Perbaikan</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- Kotak hasil: contoh output dari script.js -->
+              <div class="result-box">
+                <div class="result-score">
+                  <span class="result-label"
+                    >Rata-rata Contoh (Aktivitas 3)</span
+                  >
+                  <span class="result-val">81.67</span>
+                </div>
+                <div class="result-badge badge-b">
+                  Predikat: <strong>B</strong> (Baik)
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Kartu: Daftar Nama Siswa (Aktivitas 6) -->
+          <section class="card" id="matkul-card">
+            <div class="card-header">
+              <h2>👥 Daftar Siswa Kelas XII IPA 1 (Aktivitas 6)</h2>
+            </div>
+            <div class="card-body">
+              <!-- Daftar siswa ini mencerminkan Array di script.js -->
+              <ol class="matkul-list">
+                <li>Andi Saputra</li>
+                <li>Bela Ramadhani</li>
+                <li>Cahya Permana</li>
+                <li>Dini Anggraeni</li>
+                <li>Eka Nugraha</li>
+              </ol>
+              <p class="footnote" style="margin-top: 0.75rem">
+                * Nama-nama di atas disimpan dalam Array
+                <code>daftarSiswa[]</code> di <code>script.js</code> dan dicetak
+                menggunakan <strong>for loop</strong> di Console.
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
     </main>
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Praktikum JavaScript Dasar — PSTI Universitas Pendidikan Indonesia</p>
-        </div>
+      <div class="container">
+        <p>
+          &copy; 2026 Praktikum JavaScript Dasar — PSTI Universitas Pendidikan
+          Indonesia
+        </p>
+      </div>
     </footer>
 
     <!-- Tag script wajib diletakkan di sini, tepat sebelum </body> -->
     <!-- Menghubungkan file script.js ke halaman HTML Ketik Dibawah ini -->
-     
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
